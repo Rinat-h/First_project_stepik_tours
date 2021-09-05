@@ -7,7 +7,7 @@
     <section class="mt-3 pb-5">
       <h1 class="display-3 mt-4">{{ title }} {{ stars|stars }}</h1>
       <!-- HERO -->
-      <p class="lead">{{ country }} {{ departure|from_city }} на {{ nights|ru_pluralize:'ночи,ночи,ночей' }}</p>
+      <p class="lead">{{ country }} {{ departure|from_city }} на {{ nights|ru_pluralize:'ночь,ночи,ночей' }}</p>
       <img src="{{ picture }}" class="w-75" alt="">
       <p class="my-4 w-75">{{ description }}</p>
       <a href="#" class="btn btn-success btn-lg">Купить тур за {{ price }}</a>
