@@ -1,0 +1,25 @@
+{% extends 'tours/base.html' %}
+
+{% load filters %}
+
+{% block container %}
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ city|from_city }} </h1>
+    <p class="mb-4">Найдено {{ quant|ru_pluralize:'тур,тура,туров' }}, от {{ price_min }} до {{ price_max }} и от {{ nights_min|ru_pluralize:'ночи,ночи,ночей' }} до {{ nights_max|ru_pluralize:'ночи,ночи,ночей'}}</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+      {% for departure_name, departure_info in departure_req.items %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <img src="{{ departure_info.picture }}" class="card-img-top img-fluid" alt="Картинка тура в {{ departure_info.country }}">
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ departure_info.country }}: {{ departure_info.title }}</h2>
+            <p class="card-text">{{ departure_info.description }}</p>
+            <a href="{% url 'tour_link' departure_info.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}

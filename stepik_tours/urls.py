@@ -17,11 +17,10 @@ Including another URLconf
 from django.urls import path
 import tours.views as t_views
 
-handler404 = t_views.custom_handler404
 handler500 = t_views.custom_handler500
 
-urlpatterns = {
-    path('', t_views.main_view),
-    path('departure/<str:departure>/', t_views.departure_view),
-    path('tour/<int:id>/', t_views.tour_view),
-}
+urlpatterns = [
+    path('', t_views.main_view, name='main_view'),
+    path('departure/<str:departure>/', t_views.departure_view, name='departure_link'),
+    path('tour/<int:tour_id>/', t_views.tour_view, name='tour_link'),
+]

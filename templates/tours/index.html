@@ -1,0 +1,87 @@
+{% extends 'tours/base.html' %}
+
+{% block container %}
+  <main class="container mt-3">
+    <!-- HERO -->
+    <section class="jumbotron text-center mt-4" style="background: url('https://place-hold.it/1600x300'); background-position: center center">
+      <h1 class="display-4">{{ index_title }}</h1>
+      <p class="lead">{{ index_subtitle }}</p>
+      <p class="mt-5 w-50 mx-auto">{{ index_description }}</p>
+    </section>
+    <!-- CARDS -->
+    <div class="row mt-5">
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_1.picture }}" alt="Картинка тура в {{ tour_1.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_1.country }}: {{ tour_1.title }}</h2>
+            <p class="card-text">{{ tour_1.description }}</p>
+            <a href="{% url 'tour_link' tour_1.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_2.picture }}" alt="Картинка тура в {{ tour_2.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_2.country }}: {{ tour_2.title }}</h2>
+            <p class="card-text">{{ tour_2.description }}</p>
+            <a href="{% url 'tour_link' tour_2.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_3.picture }}" alt="Картинка тура в {{ tour_3.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_3.country }}: {{ tour_3.title }}</h2>
+            <p class="card-text">{{ tour_3.description }}</p>
+            <a href="{% url 'tour_link' tour_3.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_4.picture }}" alt="Картинка тура в {{ tour_4.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_4.country }}: {{ tour_4.title }}</h2>
+            <p class="card-text">{{ tour_4.description }}</p>
+            <a href="{% url 'tour_link' tour_4.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_5.picture }}" alt="Картинка тура в {{ tour_5.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_5.country }}: {{ tour_5.title }}</h2>
+            <p class="card-text">{{ tour_5.description }}</p>
+            <a href="{% url 'tour_link' tour_5.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_6.picture }}" alt="Картинка тура в {{ tour_6.country }}" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_6.country }}: {{ tour_6.title }}</h2>
+            <p class="card-text">{{ tour_6.description }}</p>
+            <a href="{% url 'tour_link' tour_6.id_tour %}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
